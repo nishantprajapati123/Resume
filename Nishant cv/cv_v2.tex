@@ -1,0 +1,168 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Nishant Prajapati
+	}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\section{Personal Data}
+
+\begin{tabular}{rl}
+    \textsc{Date of Birth:} & 05 February 1999 \\
+    \textsc{Address:}   & B/block Nehru maidan, sonari, Jamshedpur, Jharkhand \\
+    \textsc{Phone:}     & +91-9525959404\\
+    \textsc{email:}     & \href{mailto:knishant147@gmail.com}{knishant147@gmail.com}\\
+    \textsc{Github:}    & \url{https://github.com/nishantprajapati123}\\
+    \textsc{Linkedin:}  &\url{https://www.linkedin.com/in/nishant-prajapati-11253b152}\\
+    \textsc{Hackerrank:}&\url{https://www.hackerrank.com/Nishant_2017}
+\end{tabular}
+
+%Career objective
+\section{Career Objective}
+\footnotesize{To achieve a position where I can efficiently use my engineering skill to the growth of the organization and make
+products which are helpful in our daily life.}
+
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}	
+ \textsc{Current} & Dual Degree \textsc{Computer Science and engineering},\\ & \textbf{National Institute Of Technology}, Rourkela\\ & Major: Information Security\\
+ & \normalsize \textsc{Gpa}: 8.31/10 \\ \\
+ \textsc{Class 12 Garduation Year} & Intermediate in \textsc{Science},\\ & \textbf{MRS. K.M.P.M. Inter college}, Jamshedpur\\
+&\normalsize \textsc{Percentage}: 86.8
+\\ \\
+\textsc{Graduation Year} & Matriculation ,\\ & \textbf{Patna Doon Public school}, Patna\\
+&\normalsize \textsc{Percentage}: 89.3
+\end{tabular}
+
+%section Projects
+\section{Projects}
+\begin{tabular}{r|p{11cm}}
+\textsc{Nitrutsav-18 website}&\textsc{February, 2018}\\ &\footnotesize{I along with my web team created our cultural fest website. I had created a sign in and sign up page for user login which is based on RETRO theme.}\\ \\
+
+\textsc{Gate cse app}&\textsc{December, 2017 - March , 2018}\\ &\footnotesize{I along with my friend created a mobile app for GATE CSE aspirants. I collected all resources and previous year question and converted into xml format. I did all data management part.}\\ \\
+\textsc{Expert system}&\textsc{April, 2018}\\
+&\emph{Guide:Prof Anup nandy}\\
+&\footnotesize{I along with 2 teammates created two expert system using prolog. First MYCIN for medical for medical consultant which checks bacteroides in pateint. Second AL/3 for problem solving in chess by generating hypothesis}.\\  \\
+\textsc{Voice Recognition based security system}&\textsc{August-november, 2018}\\
+&\emph{Guide:Prof sujata mohanty}\\
+&\footnotesize{This project is based on machine learning. I developed a voice based security system, which takes users voice as input and by MFCC feature extraction algorithm and using deep learning technique it identifies whether the person is authentic person or intruder.}\\ 
+\multicolumn{2}{c}{}
+\end{tabular}
+
+%Section: Work Experience at the top
+\section{Work Experience}
+\begin{tabular}{r|p{11cm}}
+\textsc{May-July 2018}&\textsc{Summer Internship at IIT Bhubaneswar}\\ &\footnotesize{I was working under a research project \textsc{Context-adaptive Intrusion Detection System using Reinforcement Learning}.IDS monitors the network traffic and system level applications to detect malicious activities. This model uses multiple reinforcement agents distributed across the network that adapts to the context of the network. I have performed adversarial attack using an algorithm and checked the robustness of our model and improve that accuracy using de-noising technique.}\\\multicolumn{2}{c}{}
+\end{tabular}
+%Section:Technical skill
+\section{Technical Skills}
+\begin{tabular}{rl}
+General Programming:& C++, Core java, Python, C\\
+Databases:& MySQL, SQLite\\
+Frameworks:& Flask, jQuery, PHP, Prolog, Pandas, Numpy, Keras, Cleverhans, Librosa, PyAudio \\
+Other Software: & XAMPP, Code block, Jupyter notebook, Git, Heroku, GNU octave, LaTeX\\
+ \end{tabular}
+ 
+%Section: Languages
+\section{Soft Skills}
+\begin{tabular}{rl}
+\textsc{Languages} &English - Professional Fluency\\
+&Hindi- Mother Tongue\\
+\end{tabular}
+
+%extra curriculum activity
+\section{Extra Curricular Activities}
+\begin{tabular}{r|p{11cm}}
+\textsc{Technical Society} & \emph{Coordinator, INNOVISION-2k17}\\&\footnotesize{I worked as a Coordinator in Emergency and security team in our technical fest. I also participated in some events.}\\ \\
+\textsc{Literary and cultural Society} & \emph{web team Coordinator, NITRUTSAV-2k18}\\&\footnotesize{I along with my team managed the website and database whole throughout the fest.}\\ \\
+\multicolumn{2}{c}{}
+\end{tabular}
+
+
+%Section: Scholarships and additional info
+\section{Scholarships and Certificates}
+\begin{tabular}{rl}
+\textsc{December} 2018 & Udemy: Python and Flask Bootcamp-Create Websites using Flask.\\
+ \textsc{June} 2018 & Secure 702 out off 6731 position in Week of code 38 in hackerrank coding platform.\\
+ \textsc{June} 2018 & Udemy: Complete Python Bootcamp: Go from zero to hero in Python. \\
+ \textsc{August} 2017 & Branch topper in 1\textsuperscript{st} year (in Information security specialization)\\
+ \textsc{April} 2016 & District topper of Intermediate science in 12th class.\\
+ \textsc{Before} 2016 & Won science exhibition, painting, essay writing competitions at school level.
+ 
+ \normalsize\\
+\end{tabular}
+
+%section:Interests and Activities
+\section{Interests and Activities}
+Competitive programming, Quora,\\Gyming, Internet surfing, Q\&A expert at CHEGG. 
+
+
+\end{document}
